@@ -1,0 +1,44 @@
+﻿@model List<APBD9.Models.UserNote>
+
+<h2>Private dashboard</h2>
+
+<p>You are logged in.</p>
+
+<form method="post" action="/Account/Logout">
+    <button type="submit">Logout</button>
+</form>
+
+<hr />
+
+<a href="/Admin/Index">Open admin page</a>
+
+<hr />
+
+<h3>Add private note</h3>
+
+<form method="post" action="/Dashboard/AddNote">
+    <div>
+        <label>Title</label>
+        <input name="Title" />
+    </div>
+
+    <div>
+        <label>Content</label>
+        <textarea name="Content"></textarea>
+    </div>
+
+    <button type="submit">Add note</button>
+</form>
+
+<hr />
+
+<h3>My notes</h3>
+
+@foreach (var note in Model)
+{
+    <div>
+        <h4>@note.Title</h4>
+        <p>@note.Content</p>
+        <small>@note.CreatedAt</small>
+    </div>
+}

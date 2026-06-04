@@ -1,0 +1,25 @@
+﻿@model APBD9.VModels.RegisterViewModel
+
+<h2>Register</h2>
+
+<div style="color:red">
+    @Html.ValidationSummary()
+</div>
+
+<form method="post" action="/Account/Register">
+    <div>
+        <label>Email</label>
+        <input name="Email" />
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input name="Password" type="password" />
+    </div>
+
+    <button type="submit">Register</button>
+</form>
+
+<p>
+    <a href="/Account/Login">Already have account? Login</a>
+</p>
